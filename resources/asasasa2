@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use App\User;
+
+class AuthController extends Controller
+{
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        // Attempt to authenticate the user
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // If the authentication is successful, redirect the user to the dashboard
+            return redirect()->intended('dashboard');
+        }
+
+        // If the authentication is unsuccessful, redirect the user back to the login form with an error message
+        return redirect()->back()->with('error', 'Invalid email or password');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
+    public function register(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed'
+        ]);
+
+        // Create a new user
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        // Log the user in and redirect to the dashboard
+        Auth::login($user);
+        return redirect()->intended('dashboard');
+    }
+
+    public function logout()
+    {
+        // Log the user out and redirect to the home page
+        Auth::logout();
+        return redirect('/');
+    }
+}

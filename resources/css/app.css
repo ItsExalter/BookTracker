@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Pt Sans', sans-serif;
+    font-size: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 800 !important;
+}
+
+button {
+    font-weight: 700;    
+}
+
+.cust-card {
+    border-radius: 25px;
+    padding: 2rem 3.5rem;
+    background: rgba(255,255,255,0.75);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.375);
+}
+
+.form-card {
+    width: 35%;
+}
+
+.navbar-user {
+    background-color: #181D31;
+}
+
+/* For Dashboard */
+.dash-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 5.25rem;
+}
+
+.chart-section {
+    flex-basis: 30%;
+    height: 100vh;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 30%;
+    bottom: 0;
+    top: 5rem;
+    background-color: #3e1b73;
+}
+
+.book-section {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;    
+    padding: 1rem 3rem;
+}
+
+.book-status {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.sub-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.show-book {
+    display: flex;
+    flex-direction: column;
+    max-width: 10vmax;
+    margin-bottom: 2rem;
+}
+
+.book-cover {
+    aspect-ratio: 2/3;
+    margin-bottom: 0.5rem;
+}
+
+.show-book h1 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+.center-title {
+    padding-top: 7rem;
+    margin-bottom: 3rem;
+}
+
+.show-all-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.all-list {
+    justify-content: center;
+}
+
+.all-list .show-book {
+    margin: 0 2rem 2rem;
+}
+
+.profile {
+    display: flex;
+    padding-top: 5rem;
+    height: 100vh;
+}
+
+.profile > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.left-side {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 30%;
+    background-color: #4b4f90;    
+}
+
+.center-side {
+    flex-basis: 50%;
+    background-color: #b8f4f3;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-basis: 20%;
+    background-color: #5882ad;
+}
